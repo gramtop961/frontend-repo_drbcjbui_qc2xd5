@@ -1,28 +1,37 @@
-import { useState } from 'react'
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import FeatureGrid from "./components/FeatureGrid";
+import Footer from "./components/Footer";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
-        </div>
-      </div>
+    <div className="min-h-screen flex flex-col bg-white text-gray-900">
+      <Navbar />
+      <main className="flex-1">
+        <Hero />
+        <FeatureGrid />
+        <section className="mx-auto max-w-6xl px-4 pb-20">
+          <div className="rounded-2xl bg-gradient-to-r from-indigo-600 to-violet-600 p-8 sm:p-12 text-white">
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div>
+                <h3 className="text-2xl font-semibold">Ready to streamline swaps?</h3>
+                <p className="mt-2 text-indigo-100">Authenticate once and manage your time like a pro. Clear, fast, and secure.</p>
+              </div>
+              <div className="flex md:justify-end">
+                <a
+                  href="#"
+                  className="inline-flex items-center justify-center rounded-md bg-white px-5 py-3 text-sm font-semibold text-indigo-700 shadow-sm hover:bg-indigo-50"
+                >
+                  Create your account
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
